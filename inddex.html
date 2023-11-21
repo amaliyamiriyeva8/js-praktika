@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    nav{
+        width: 100%;
+        height: 100px;
+        background-color: lavender;
+        position: fixed;
+        transition: all 1s ease;
+    }
+    section{
+        width: 100%;
+        height: 90vh;
+        background-color: lightpink;
+    }
+    menu{
+        width: 100%;
+        height: 90vh;
+        background-color: skyblue;
+    }
+    footer{
+        width: 100%;
+        height: 70px;
+        background-color: royalblue;
+    }
+    button{
+        position: fixed;
+        padding: 20px;
+        font-size: 35px;
+        right: 40px;
+        bottom: 20px;
+        background-color: lightcyan;
+        border: none;
+        border-radius: 9999px;
+       display: none;
+        }
+</style>
+<body>
+    <button>!</button>
+    <nav></nav>
+    <menu></menu>
+    <section></section>
+    <footer></footer>
+    <script>
+        const navbar=document.querySelector('nav');
+        const btn=document.querySelector('button');
+       window.addEventListener('scroll',()=>{
+        if(window.scrollY>100){
+            navbar.style.backgroundColor="navy";
+            navbar.style.height="70px"
+        }
+        else{
+            navbar.style.backgroundColor="";
+            navbar.style.height=""
+        }
+        if(window.scrollY>400){
+            btn.style.display="block"
+        }
+        else{
+            btn.style.display="none"
+        }
+       })
+       btn.addEventListener('click',()=>{
+        window.scrollTo({
+            top:0,left:0,behavior:"smooth"
+        })
+        btn.style.backgroundColor="pink"
+       })
+    </script>
+</body>
+</html>
